@@ -12,7 +12,7 @@ on:
 
 jobs:
   compile:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     name: Compile project
     steps:
       - name: Checkout code
@@ -33,7 +33,7 @@ jobs:
   
 
   unit-tests:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     name: Unit tests
     steps:
       - name: Checkout code
@@ -53,7 +53,7 @@ jobs:
           ./mvnw clean
 
   build:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     name: Build backend
     needs: [compile, unit-tests]
     steps:
@@ -76,7 +76,7 @@ jobs:
 
   build-image:
     name: Build Docker image
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: [build]
     steps:
       - name: Checkout code
@@ -121,7 +121,7 @@ jobs:
             
   deploy:
     name: Deploy Backend
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs: [build-image]
     steps:
       - name: Create deployment folder
