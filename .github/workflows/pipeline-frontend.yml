@@ -59,7 +59,7 @@ jobs:
           chmod 600 ~/.ssh/id_rsa 
           ssh-keyscan -H ${{ secrets.VPS_IP }} >> ~/.ssh/known_hosts
 
-      - name: Create deployment folder
+      - name: Create deployment folder work
         run: ssh ${{ secrets.VPS_USERNAME }}@${{ secrets.VPS_IP }} "mkdir -p ci-cd"
 
       - name: Copy docker-compose file
