@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-jdk@v4
         with:
           java-version: 21
-          distributions: 'corretto'
+          distribution: 'temurin'
 
       - name: Compile project
         run: |
@@ -45,7 +45,7 @@ jobs:
         uses: actions/setup-jdk@v4
         with:
           java-version: 21
-          distributions: 'corretto'
+          distribution: 'temurin'
 
       - name: Running unit tests
         run: |
